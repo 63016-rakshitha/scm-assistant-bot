@@ -1,0 +1,1469 @@
+{
+  "nodes": [
+    {
+      "id": "chatGoogleGenerativeAI_0",
+      "position": {
+        "x": 1927.982306235071,
+        "y": -515.3109588206187
+      },
+      "type": "customNode",
+      "data": {
+        "id": "chatGoogleGenerativeAI_0",
+        "label": "Google Gemini",
+        "version": 3.1,
+        "name": "chatGoogleGenerativeAI",
+        "type": "ChatGoogleGenerativeAI",
+        "baseClasses": [
+          "ChatGoogleGenerativeAI",
+          "ChatGoogleGenerativeAI",
+          "BaseChatModel",
+          "BaseLanguageModel",
+          "Runnable"
+        ],
+        "category": "Chat Models",
+        "description": "Wrapper around Google Gemini large language models that use the Chat endpoint",
+        "inputParams": [
+          {
+            "label": "Connect Credential",
+            "name": "credential",
+            "type": "credential",
+            "credentialNames": [
+              "googleGenerativeAI"
+            ],
+            "optional": false,
+            "description": "Google Generative AI credential.",
+            "id": "chatGoogleGenerativeAI_0-input-credential-credential",
+            "display": true
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "asyncOptions",
+            "loadMethod": "listModels",
+            "default": "gemini-1.5-flash-latest",
+            "id": "chatGoogleGenerativeAI_0-input-modelName-asyncOptions",
+            "display": true
+          },
+          {
+            "label": "Temperature",
+            "name": "temperature",
+            "type": "number",
+            "step": 0.1,
+            "default": 0.9,
+            "optional": true,
+            "id": "chatGoogleGenerativeAI_0-input-temperature-number",
+            "display": true
+          },
+          {
+            "label": "Streaming",
+            "name": "streaming",
+            "type": "boolean",
+            "default": true,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-streaming-boolean",
+            "display": true
+          },
+          {
+            "label": "Max Output Tokens",
+            "name": "maxOutputTokens",
+            "type": "number",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-maxOutputTokens-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Cache",
+            "name": "cache",
+            "type": "BaseCache",
+            "optional": true,
+            "id": "chatGoogleGenerativeAI_0-input-cache-BaseCache",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "cache": "",
+          "modelName": "gemini-3-flash-preview",
+          "customModelName": "",
+          "temperature": "0.0",
+          "streaming": true,
+          "allowImageUploads": "",
+          "thinkingBudget": "",
+          "thinkingLevel": "",
+          "maxOutputTokens": "",
+          "topP": "",
+          "topK": "",
+          "safetySettings": "",
+          "baseUrl": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|ChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable",
+            "name": "chatGoogleGenerativeAI",
+            "label": "ChatGoogleGenerativeAI",
+            "description": "Wrapper around Google Gemini large language models that use the Chat endpoint",
+            "type": "ChatGoogleGenerativeAI | ChatGoogleGenerativeAI | BaseChatModel | BaseLanguageModel | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 578,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1927.982306235071,
+        "y": -515.3109588206187
+      },
+      "dragging": false
+    },
+    {
+      "id": "documentStore_0",
+      "position": {
+        "x": 374.76952687400455,
+        "y": 454.6460582347972
+      },
+      "type": "customNode",
+      "data": {
+        "id": "documentStore_0",
+        "label": "Document Store",
+        "version": 1,
+        "name": "documentStore",
+        "type": "Document",
+        "baseClasses": [
+          "Document"
+        ],
+        "category": "Document Loaders",
+        "description": "Load data from pre-configured document stores",
+        "inputParams": [
+          {
+            "label": "Select Store",
+            "name": "selectedStore",
+            "type": "asyncOptions",
+            "loadMethod": "listStores",
+            "id": "documentStore_0-input-selectedStore-asyncOptions",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "selectedStore": "6ac84953-e850-4f83-a131-3c5b2afe9dca"
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "Array of document objects containing metadata and pageContent",
+            "options": [
+              {
+                "id": "documentStore_0-output-document-Document|json",
+                "name": "document",
+                "label": "Document",
+                "description": "Array of document objects containing metadata and pageContent",
+                "type": "Document | json"
+              },
+              {
+                "id": "documentStore_0-output-text-string|json",
+                "name": "text",
+                "label": "Text",
+                "description": "Concatenated string from pageContent of documents",
+                "type": "string | json"
+              }
+            ],
+            "default": "document"
+          }
+        ],
+        "outputs": {
+          "output": "document"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 317,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 374.76952687400455,
+        "y": 454.6460582347972
+      }
+    },
+    {
+      "id": "documentStore_1",
+      "position": {
+        "x": 366.95382603517766,
+        "y": 47.83217133515791
+      },
+      "type": "customNode",
+      "data": {
+        "id": "documentStore_1",
+        "label": "Document Store (1)",
+        "version": 1,
+        "name": "documentStore",
+        "type": "Document",
+        "baseClasses": [
+          "Document"
+        ],
+        "category": "Document Loaders",
+        "description": "Load data from pre-configured document stores",
+        "inputParams": [
+          {
+            "label": "Select Store",
+            "name": "selectedStore",
+            "type": "asyncOptions",
+            "loadMethod": "listStores",
+            "id": "documentStore_1-input-selectedStore-asyncOptions",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "selectedStore": "e6934f3b-bce4-41c4-8068-27f47fd8d216"
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "Array of document objects containing metadata and pageContent",
+            "options": [
+              {
+                "id": "documentStore_1-output-document-Document|json",
+                "name": "document",
+                "label": "Document",
+                "description": "Array of document objects containing metadata and pageContent",
+                "type": "Document | json"
+              },
+              {
+                "id": "documentStore_1-output-text-string|json",
+                "name": "text",
+                "label": "Text",
+                "description": "Concatenated string from pageContent of documents",
+                "type": "string | json"
+              }
+            ],
+            "default": "document"
+          }
+        ],
+        "outputs": {
+          "output": "document"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 317,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 366.95382603517766,
+        "y": 47.83217133515791
+      }
+    },
+    {
+      "id": "googleGenerativeAiEmbeddings_0",
+      "position": {
+        "x": 704.822175552052,
+        "y": -396.58765963183953
+      },
+      "type": "customNode",
+      "data": {
+        "id": "googleGenerativeAiEmbeddings_0",
+        "label": "Google Gemini Embedding",
+        "version": 2,
+        "name": "googleGenerativeAiEmbeddings",
+        "type": "GoogleGenerativeAiEmbeddings",
+        "baseClasses": [
+          "GoogleGenerativeAiEmbeddings",
+          "GoogleGenerativeAIEmbeddings",
+          "Embeddings"
+        ],
+        "category": "Embeddings",
+        "description": "Google Generative API to generate embeddings for a given text",
+        "inputParams": [
+          {
+            "label": "Connect Credential",
+            "name": "credential",
+            "type": "credential",
+            "credentialNames": [
+              "googleGenerativeAI"
+            ],
+            "optional": false,
+            "description": "Google Generative AI credential.",
+            "id": "googleGenerativeAiEmbeddings_0-input-credential-credential",
+            "display": true
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "asyncOptions",
+            "loadMethod": "listModels",
+            "default": "gemini-embedding-001",
+            "id": "googleGenerativeAiEmbeddings_0-input-modelName-asyncOptions",
+            "display": true
+          },
+          {
+            "label": "Task Type",
+            "name": "tasktype",
+            "type": "options",
+            "default": "TASK_TYPE_UNSPECIFIED",
+            "options": [
+              {
+                "label": "TASK_TYPE_UNSPECIFIED",
+                "name": "TASK_TYPE_UNSPECIFIED"
+              },
+              {
+                "label": "RETRIEVAL_QUERY",
+                "name": "RETRIEVAL_QUERY"
+              },
+              {
+                "label": "RETRIEVAL_DOCUMENT",
+                "name": "RETRIEVAL_DOCUMENT"
+              },
+              {
+                "label": "SEMANTIC_SIMILARITY",
+                "name": "SEMANTIC_SIMILARITY"
+              },
+              {
+                "label": "CLASSIFICATION",
+                "name": "CLASSIFICATION"
+              },
+              {
+                "label": "CLUSTERING",
+                "name": "CLUSTERING"
+              }
+            ],
+            "id": "googleGenerativeAiEmbeddings_0-input-tasktype-options",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "modelName": "gemini-embedding-001",
+          "tasktype": "RETRIEVAL_DOCUMENT",
+          "stripNewLines": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "googleGenerativeAiEmbeddings_0-output-googleGenerativeAiEmbeddings-GoogleGenerativeAiEmbeddings|GoogleGenerativeAIEmbeddings|Embeddings",
+            "name": "googleGenerativeAiEmbeddings",
+            "label": "GoogleGenerativeAiEmbeddings",
+            "description": "Google Generative API to generate embeddings for a given text",
+            "type": "GoogleGenerativeAiEmbeddings | GoogleGenerativeAIEmbeddings | Embeddings"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 472,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 704.822175552052,
+        "y": -396.58765963183953
+      },
+      "dragging": false
+    },
+    {
+      "id": "memoryVectorStore_0",
+      "position": {
+        "x": 1121.500173364362,
+        "y": 6.833941059495601
+      },
+      "type": "customNode",
+      "data": {
+        "id": "memoryVectorStore_0",
+        "label": "In-Memory Vector Store",
+        "version": 1,
+        "name": "memoryVectorStore",
+        "type": "Memory",
+        "baseClasses": [
+          "Memory",
+          "VectorStoreRetriever",
+          "BaseRetriever"
+        ],
+        "category": "Vector Stores",
+        "description": "In-memory vectorstore that stores embeddings and does an exact, linear search for the most similar embeddings.",
+        "inputParams": [
+          {
+            "label": "Top K",
+            "name": "topK",
+            "description": "Number of top results to fetch. Default to 4",
+            "placeholder": "4",
+            "type": "number",
+            "optional": true,
+            "id": "memoryVectorStore_0-input-topK-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Document",
+            "name": "document",
+            "type": "Document",
+            "list": true,
+            "optional": true,
+            "id": "memoryVectorStore_0-input-document-Document",
+            "display": true
+          },
+          {
+            "label": "Embeddings",
+            "name": "embeddings",
+            "type": "Embeddings",
+            "id": "memoryVectorStore_0-input-embeddings-Embeddings",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "document": [
+            "{{documentStore_1.data.instance}}"
+          ],
+          "embeddings": "{{googleGenerativeAiEmbeddings_0.data.instance}}",
+          "topK": "20"
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "",
+            "options": [
+              {
+                "id": "memoryVectorStore_0-output-retriever-Memory|VectorStoreRetriever|BaseRetriever",
+                "name": "retriever",
+                "label": "Memory Retriever",
+                "description": "",
+                "type": "Memory | VectorStoreRetriever | BaseRetriever"
+              },
+              {
+                "id": "memoryVectorStore_0-output-vectorStore-Memory|VectorStore",
+                "name": "vectorStore",
+                "label": "Memory Vector Store",
+                "description": "",
+                "type": "Memory | VectorStore"
+              }
+            ],
+            "default": "retriever"
+          }
+        ],
+        "outputs": {
+          "output": "vectorStore"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 411,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1121.500173364362,
+        "y": 6.833941059495601
+      }
+    },
+    {
+      "id": "memoryVectorStore_1",
+      "position": {
+        "x": 1121.2274410493264,
+        "y": 440.50494297334967
+      },
+      "type": "customNode",
+      "data": {
+        "id": "memoryVectorStore_1",
+        "label": "In-Memory Vector Store (1)",
+        "version": 1,
+        "name": "memoryVectorStore",
+        "type": "Memory",
+        "baseClasses": [
+          "Memory",
+          "VectorStoreRetriever",
+          "BaseRetriever"
+        ],
+        "category": "Vector Stores",
+        "description": "In-memory vectorstore that stores embeddings and does an exact, linear search for the most similar embeddings.",
+        "inputParams": [
+          {
+            "label": "Top K",
+            "name": "topK",
+            "description": "Number of top results to fetch. Default to 4",
+            "placeholder": "4",
+            "type": "number",
+            "optional": true,
+            "id": "memoryVectorStore_1-input-topK-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Document",
+            "name": "document",
+            "type": "Document",
+            "list": true,
+            "optional": true,
+            "id": "memoryVectorStore_1-input-document-Document",
+            "display": true
+          },
+          {
+            "label": "Embeddings",
+            "name": "embeddings",
+            "type": "Embeddings",
+            "id": "memoryVectorStore_1-input-embeddings-Embeddings",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "document": [
+            "{{documentStore_0.data.instance}}"
+          ],
+          "embeddings": "{{googleGenerativeAiEmbeddings_0.data.instance}}",
+          "topK": "10"
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "",
+            "options": [
+              {
+                "id": "memoryVectorStore_1-output-retriever-Memory|VectorStoreRetriever|BaseRetriever",
+                "name": "retriever",
+                "label": "Memory Retriever",
+                "description": "",
+                "type": "Memory | VectorStoreRetriever | BaseRetriever"
+              },
+              {
+                "id": "memoryVectorStore_1-output-vectorStore-Memory|VectorStore",
+                "name": "vectorStore",
+                "label": "Memory Vector Store",
+                "description": "",
+                "type": "Memory | VectorStore"
+              }
+            ],
+            "default": "retriever"
+          }
+        ],
+        "outputs": {
+          "output": "vectorStore"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 411,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1121.2274410493264,
+        "y": 440.50494297334967
+      }
+    },
+    {
+      "id": "vectorStoreRetriever_0",
+      "position": {
+        "x": 1505.3675871269265,
+        "y": -94.74819001352535
+      },
+      "type": "customNode",
+      "data": {
+        "id": "vectorStoreRetriever_0",
+        "label": "Vector Store Retriever",
+        "version": 1,
+        "name": "vectorStoreRetriever",
+        "type": "VectorStoreRetriever",
+        "baseClasses": [
+          "VectorStoreRetriever"
+        ],
+        "category": "Retrievers",
+        "description": "Store vector store as retriever to be later queried by MultiRetrievalQAChain",
+        "inputParams": [
+          {
+            "label": "Retriever Name",
+            "name": "name",
+            "type": "string",
+            "placeholder": "netflix movies",
+            "id": "vectorStoreRetriever_0-input-name-string",
+            "display": true
+          },
+          {
+            "label": "Retriever Description",
+            "name": "description",
+            "type": "string",
+            "rows": 3,
+            "description": "Description of when to use the vector store retriever",
+            "placeholder": "Good for answering questions about netflix movies",
+            "id": "vectorStoreRetriever_0-input-description-string",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Vector Store",
+            "name": "vectorStore",
+            "type": "VectorStore",
+            "id": "vectorStoreRetriever_0-input-vectorStore-VectorStore",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "vectorStore": "{{memoryVectorStore_0.data.instance}}",
+          "name": "supplier_retriever",
+          "description": "Retrieves supplier performance and procurement data from supplier_performance_data.csv.\n\nUse this retriever for:\n- Supplier names and supplier IDs\n- Tier classification (Tier-1, Tier-2, Tier-3)\n- Risk levels (Low, Medium, High)\n- Active disruption flags\n- Compliance scores\n- Sustainability scores\n- OTD (On-Time Delivery) rates\n- Defect rates\n- Purchase order values\n- Total spend calculations\n- Regional spend analysis (APAC, EMEA, LATAM, NA)\n- Product categories\n- Audit dates\n- Alternate supplier IDs\n- Supplier watch list identification\n- Supplier counts and rankings\n\nAlways use this retriever whenever a question requires supplier metrics, calculations, aggregations, filtering, counts, spend analysis, supplier status, or operational performance data."
+        },
+        "outputAnchors": [
+          {
+            "id": "vectorStoreRetriever_0-output-vectorStoreRetriever-VectorStoreRetriever",
+            "name": "vectorStoreRetriever",
+            "label": "VectorStoreRetriever",
+            "description": "Store vector store as retriever to be later queried by MultiRetrievalQAChain",
+            "type": "VectorStoreRetriever"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 511,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1505.3675871269265,
+        "y": -94.74819001352535
+      },
+      "dragging": false
+    },
+    {
+      "id": "vectorStoreRetriever_1",
+      "position": {
+        "x": 1517.0088933260076,
+        "y": 455.6803893386738
+      },
+      "type": "customNode",
+      "data": {
+        "id": "vectorStoreRetriever_1",
+        "label": "Vector Store Retriever (1)",
+        "version": 1,
+        "name": "vectorStoreRetriever",
+        "type": "VectorStoreRetriever",
+        "baseClasses": [
+          "VectorStoreRetriever"
+        ],
+        "category": "Retrievers",
+        "description": "Store vector store as retriever to be later queried by MultiRetrievalQAChain",
+        "inputParams": [
+          {
+            "label": "Retriever Name",
+            "name": "name",
+            "type": "string",
+            "placeholder": "netflix movies",
+            "id": "vectorStoreRetriever_1-input-name-string",
+            "display": true
+          },
+          {
+            "label": "Retriever Description",
+            "name": "description",
+            "type": "string",
+            "rows": 3,
+            "description": "Description of when to use the vector store retriever",
+            "placeholder": "Good for answering questions about netflix movies",
+            "id": "vectorStoreRetriever_1-input-description-string",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Vector Store",
+            "name": "vectorStore",
+            "type": "VectorStore",
+            "id": "vectorStoreRetriever_1-input-vectorStore-VectorStore",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "vectorStore": "{{memoryVectorStore_1.data.instance}}",
+          "name": "policy_retriever",
+          "description": "Retrieves governance rules and policy information from SupplyChain_Governance_Policy_v3.2.pdf.\n\nUse this retriever for:\n- Supplier tier definitions\n- SLA requirements\n- OTD thresholds\n- Defect rate limits\n- Compliance score requirements\n- Supplier Watch List (SWL) rules\n- Volume Rebate Program criteria\n- Risk assessment policies\n- Escalation procedures\n- Concentration risk limits\n- Sustainability requirements\n- Audit frequency requirements\n- Certification requirements\n- Disruption response procedures\n- Alternate supplier activation rules\n- Policy section references\n\nUse this retriever whenever a question asks:\n\"What does the policy say?\"\n\"What is the rule?\"\n\"What threshold applies?\"\n\"What action is required?\"\n\"What restriction applies?\"\nor requires a policy citation."
+        },
+        "outputAnchors": [
+          {
+            "id": "vectorStoreRetriever_1-output-vectorStoreRetriever-VectorStoreRetriever",
+            "name": "vectorStoreRetriever",
+            "label": "VectorStoreRetriever",
+            "description": "Store vector store as retriever to be later queried by MultiRetrievalQAChain",
+            "type": "VectorStoreRetriever"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 511,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1517.0088933260076,
+        "y": 455.6803893386738
+      },
+      "dragging": false
+    },
+    {
+      "id": "multiRetrievalQAChain_0",
+      "position": {
+        "x": 2406.0688987941617,
+        "y": 143.53258026881196
+      },
+      "type": "customNode",
+      "data": {
+        "id": "multiRetrievalQAChain_0",
+        "label": "Multi Retrieval QA Chain",
+        "version": 2,
+        "name": "multiRetrievalQAChain",
+        "type": "MultiRetrievalQAChain",
+        "baseClasses": [
+          "MultiRetrievalQAChain",
+          "MultiRouteChain",
+          "BaseChain",
+          "Runnable"
+        ],
+        "category": "Chains",
+        "description": "QA Chain that automatically picks an appropriate vector store from multiple retrievers",
+        "inputParams": [
+          {
+            "label": "Return Source Documents",
+            "name": "returnSourceDocuments",
+            "type": "boolean",
+            "optional": true,
+            "id": "multiRetrievalQAChain_0-input-returnSourceDocuments-boolean",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Language Model",
+            "name": "model",
+            "type": "BaseLanguageModel",
+            "id": "multiRetrievalQAChain_0-input-model-BaseLanguageModel",
+            "display": true
+          },
+          {
+            "label": "Vector Store Retriever",
+            "name": "vectorStoreRetriever",
+            "type": "VectorStoreRetriever",
+            "list": true,
+            "id": "multiRetrievalQAChain_0-input-vectorStoreRetriever-VectorStoreRetriever",
+            "display": true
+          },
+          {
+            "label": "Input Moderation",
+            "description": "Detect text that could generate harmful output and prevent it from being sent to the language model",
+            "name": "inputModeration",
+            "type": "Moderation",
+            "optional": true,
+            "list": true,
+            "id": "multiRetrievalQAChain_0-input-inputModeration-Moderation",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "model": "{{chatGoogleGenerativeAI_0.data.instance}}",
+          "vectorStoreRetriever": [
+            "{{vectorStoreRetriever_0.data.instance}}",
+            "{{vectorStoreRetriever_1.data.instance}}"
+          ],
+          "returnSourceDocuments": false,
+          "inputModeration": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "multiRetrievalQAChain_0-output-multiRetrievalQAChain-MultiRetrievalQAChain|MultiRouteChain|BaseChain|Runnable",
+            "name": "multiRetrievalQAChain",
+            "label": "MultiRetrievalQAChain",
+            "description": "QA Chain that automatically picks an appropriate vector store from multiple retrievers",
+            "type": "MultiRetrievalQAChain | MultiRouteChain | BaseChain | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 434,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 2406.0688987941617,
+        "y": 143.53258026881196
+      },
+      "dragging": false
+    },
+    {
+      "id": "csvAgent_0",
+      "position": {
+        "x": 1121.500173364362,
+        "y": 920
+      },
+      "type": "customNode",
+      "data": {
+        "id": "csvAgent_0",
+        "label": "CSV Agent",
+        "version": 1,
+        "name": "csvAgent",
+        "type": "AgentExecutor",
+        "baseClasses": [
+          "AgentExecutor",
+          "BaseChain",
+          "Runnable"
+        ],
+        "category": "Agents",
+        "description": "Agent that performs precise arithmetic on supplier_performance_data.csv loaded from the Supplier_data_KB Document Store. Handles counts, sums, averages, percentages, spend by region, compliance thresholds, and defect rate analysis.",
+        "inputParams": [
+          {
+            "label": "System Message",
+            "name": "systemMessage",
+            "type": "string",
+            "rows": 6,
+            "optional": true,
+            "additionalParams": true,
+            "id": "csvAgent_0-input-systemMessage-string",
+            "display": true
+          },
+          {
+            "label": "Max Iterations",
+            "name": "maxIterations",
+            "type": "number",
+            "optional": true,
+            "additionalParams": true,
+            "id": "csvAgent_0-input-maxIterations-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Language Model",
+            "name": "model",
+            "type": "BaseLanguageModel",
+            "id": "csvAgent_0-input-model-BaseLanguageModel",
+            "display": true
+          },
+          {
+            "label": "CSV Document (from Document Store KB)",
+            "name": "csvFile",
+            "type": "Document",
+            "list": true,
+            "id": "csvAgent_0-input-csvFile-Document",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "model": "{{chatGoogleGenerativeAI_0.data.instance}}",
+          "csvFile": [
+            "{{documentStore_1.data.instance}}"
+          ],
+          "systemMessage": "You are a precise supply chain data analyst with access to supplier_performance_data.csv.\n\nColumns: Supplier_Name, Supplier_ID, Tier, Risk_Level, Active_Disruption, Compliance_Score, Sustainability_Score, OTD_Rate, Defect_Rate, PO_Value, Region, Product_Category, Alternate_Supplier_ID.\n\nCALCULATION RULES:\n- COUNT: count rows matching filter criteria.\n- SUM: sum the PO_Value column for matching rows.\n- AVERAGE: sum / count for matching rows.\n- PERCENTAGE: (group value / total value) * 100, rounded to 2 decimal places.\n- REGIONAL SPEND: GROUP BY Region, SUM PO_Value for each region, compute % of grand total.\n- HIGHEST REGION: return the region with the largest SUM(PO_Value), its total, and its % of grand total.\n- SUPPLIER WATCH LIST: rows where Compliance_Score < 60.\n- HIGH RISK: rows where Risk_Level = 'High'.\n- ACTIVE DISRUPTION: rows where Active_Disruption = 'Yes' or True.\n\nOUTPUT FORMAT — always return:\nResult: [single computed value or ranked list]\nBreakdown: [all groups with their values, e.g. APAC: $X (Y%), EMEA: $X (Y%), ...]\nGrand Total: [total PO value across all rows]\nMethod: [what you calculated and how]\n\nNever estimate. Never skip the breakdown. Always include exact dollar amounts and percentages.",
+          "maxIterations": 10
+        },
+        "outputAnchors": [
+          {
+            "id": "csvAgent_0-output-csvAgent-AgentExecutor|BaseChain|Runnable",
+            "name": "csvAgent",
+            "label": "CSV Agent",
+            "description": "Agent that performs precise arithmetic on supplier CSV data",
+            "type": "AgentExecutor | BaseChain | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 357,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1121.500173364362,
+        "y": 920
+      }
+    },
+    {
+      "id": "retrieverTool_0",
+      "position": {
+        "x": 1930,
+        "y": 700
+      },
+      "type": "customNode",
+      "data": {
+        "id": "retrieverTool_0",
+        "label": "Retriever Tool — Supplier Data",
+        "version": 1,
+        "name": "retrieverTool",
+        "type": "DynamicTool",
+        "baseClasses": [
+          "DynamicTool",
+          "Tool",
+          "StructuredTool",
+          "Runnable"
+        ],
+        "category": "Tools",
+        "description": "Wraps the supplier vector store retriever as a tool so the Tool Agent can call it for qualitative supplier lookups.",
+        "inputParams": [
+          {
+            "label": "Tool Name",
+            "name": "name",
+            "type": "string",
+            "id": "retrieverTool_0-input-name-string",
+            "display": true
+          },
+          {
+            "label": "Tool Description",
+            "name": "description",
+            "type": "string",
+            "rows": 3,
+            "id": "retrieverTool_0-input-description-string",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Retriever",
+            "name": "retriever",
+            "type": "BaseRetriever",
+            "id": "retrieverTool_0-input-retriever-BaseRetriever",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "name": "supplier_data_lookup",
+          "description": "Use this tool to look up qualitative supplier information: names, IDs, tier classifications, risk levels, active disruption flags, compliance scores, sustainability scores, OTD rates, defect rates, regions, product categories, and alternate supplier IDs. Do NOT use for arithmetic calculations — use csv_agent_calculator for those.",
+          "retriever": "{{vectorStoreRetriever_0.data.instance}}"
+        },
+        "outputAnchors": [
+          {
+            "id": "retrieverTool_0-output-retrieverTool-DynamicTool|Tool|StructuredTool|Runnable",
+            "name": "retrieverTool",
+            "label": "RetrieverTool",
+            "description": "Wraps retriever as a tool",
+            "type": "DynamicTool | Tool | StructuredTool | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 511,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1930,
+        "y": 700
+      }
+    },
+    {
+      "id": "retrieverTool_1",
+      "position": {
+        "x": 1930,
+        "y": 1160
+      },
+      "type": "customNode",
+      "data": {
+        "id": "retrieverTool_1",
+        "label": "Retriever Tool — Policy",
+        "version": 1,
+        "name": "retrieverTool",
+        "type": "DynamicTool",
+        "baseClasses": [
+          "DynamicTool",
+          "Tool",
+          "StructuredTool",
+          "Runnable"
+        ],
+        "category": "Tools",
+        "description": "Wraps the policy vector store retriever as a tool for the Tool Agent to look up governance rules and policy sections.",
+        "inputParams": [
+          {
+            "label": "Tool Name",
+            "name": "name",
+            "type": "string",
+            "id": "retrieverTool_1-input-name-string",
+            "display": true
+          },
+          {
+            "label": "Tool Description",
+            "name": "description",
+            "type": "string",
+            "rows": 3,
+            "id": "retrieverTool_1-input-description-string",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Retriever",
+            "name": "retriever",
+            "type": "BaseRetriever",
+            "id": "retrieverTool_1-input-retriever-BaseRetriever",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "name": "policy_lookup",
+          "description": "Use this tool to retrieve governance rules from SupplyChain_Governance_Policy_v3.2.pdf. Use for: tier definitions, SLA requirements, OTD thresholds, defect rate limits, compliance score rules, Supplier Watch List (SWL) rules, Volume Rebate criteria, concentration risk limits, escalation protocols, disruption response procedures, and alternate supplier activation rules. Always cite the policy section number in your answer.",
+          "retriever": "{{vectorStoreRetriever_1.data.instance}}"
+        },
+        "outputAnchors": [
+          {
+            "id": "retrieverTool_1-output-retrieverTool-DynamicTool|Tool|StructuredTool|Runnable",
+            "name": "retrieverTool",
+            "label": "RetrieverTool",
+            "description": "Wraps retriever as a tool",
+            "type": "DynamicTool | Tool | StructuredTool | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 511,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1930,
+        "y": 1160
+      }
+    },
+    {
+      "id": "chainTool_0",
+      "position": {
+        "x": 1930,
+        "y": 930
+      },
+      "type": "customNode",
+      "data": {
+        "id": "chainTool_0",
+        "label": "Chain Tool — CSV Calculator",
+        "version": 1,
+        "name": "chainTool",
+        "type": "DynamicTool",
+        "baseClasses": [
+          "DynamicTool",
+          "Tool",
+          "StructuredTool",
+          "Runnable"
+        ],
+        "category": "Tools",
+        "description": "Wraps the CSV Agent as a callable tool so the Tool Agent can delegate arithmetic calculations to it.",
+        "inputParams": [
+          {
+            "label": "Tool Name",
+            "name": "name",
+            "type": "string",
+            "id": "chainTool_0-input-name-string",
+            "display": true
+          },
+          {
+            "label": "Tool Description",
+            "name": "description",
+            "type": "string",
+            "rows": 3,
+            "id": "chainTool_0-input-description-string",
+            "display": true
+          },
+          {
+            "label": "Return Direct",
+            "name": "returnDirect",
+            "type": "boolean",
+            "optional": true,
+            "id": "chainTool_0-input-returnDirect-boolean",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Chain",
+            "name": "chain",
+            "type": "BaseChain",
+            "id": "chainTool_0-input-chain-BaseChain",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "name": "csv_agent_calculator",
+          "description": "Use this tool for ALL arithmetic operations over supplier data: counts (how many suppliers are Tier-1), sums (total PO value by region), averages (average OTD rate), percentages (% suppliers with compliance score below 60), spend analysis, concentration checks, and supplier rankings. Input: a plain English calculation question about the supplier CSV. Output: computed numeric result with supporting data.",
+          "chain": "{{csvAgent_0.data.instance}}",
+          "returnDirect": false
+        },
+        "outputAnchors": [
+          {
+            "id": "chainTool_0-output-chainTool-DynamicTool|Tool|StructuredTool|Runnable",
+            "name": "chainTool",
+            "label": "ChainTool",
+            "description": "Wraps chain as a tool",
+            "type": "DynamicTool | Tool | StructuredTool | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 608,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1930,
+        "y": 930
+      }
+    },
+    {
+      "id": "toolAgent_0",
+      "position": {
+        "x": 2406.0688987941617,
+        "y": 700
+      },
+      "type": "customNode",
+      "data": {
+        "id": "toolAgent_0",
+        "label": "Tool Agent — Supply Chain Orchestrator",
+        "version": 1,
+        "name": "toolAgent",
+        "type": "AgentExecutor",
+        "baseClasses": [
+          "AgentExecutor",
+          "BaseChain",
+          "Runnable"
+        ],
+        "category": "Agents",
+        "description": "Main orchestrator agent for supply chain governance queries. Automatically selects the correct tool: csv_agent_calculator for arithmetic, supplier_data_lookup for supplier profiles, policy_lookup for governance rules.",
+        "inputParams": [
+          {
+            "label": "System Message",
+            "name": "systemMessage",
+            "type": "string",
+            "rows": 10,
+            "optional": true,
+            "additionalParams": true,
+            "id": "toolAgent_0-input-systemMessage-string",
+            "display": true
+          },
+          {
+            "label": "Max Iterations",
+            "name": "maxIterations",
+            "type": "number",
+            "optional": true,
+            "additionalParams": true,
+            "id": "toolAgent_0-input-maxIterations-number",
+            "display": true
+          },
+          {
+            "label": "Return Source Documents",
+            "name": "returnSourceDocuments",
+            "type": "boolean",
+            "optional": true,
+            "id": "toolAgent_0-input-returnSourceDocuments-boolean",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Language Model",
+            "name": "model",
+            "type": "BaseLanguageModel",
+            "id": "toolAgent_0-input-model-BaseLanguageModel",
+            "display": true
+          },
+          {
+            "label": "Tools",
+            "name": "tools",
+            "type": "Tool",
+            "list": true,
+            "id": "toolAgent_0-input-tools-Tool",
+            "display": true
+          },
+          {
+            "label": "Input Moderation",
+            "name": "inputModeration",
+            "type": "Moderation",
+            "optional": true,
+            "list": true,
+            "id": "toolAgent_0-input-inputModeration-Moderation",
+            "display": true
+          },
+          {
+            "label": "Memory",
+            "name": "memory",
+            "type": "BaseChatMemory",
+            "optional": true,
+            "id": "toolAgent_0-input-memory-BaseChatMemory",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "model": "{{chatGoogleGenerativeAI_0.data.instance}}",
+          "tools": [
+            "{{chainTool_0.data.instance}}",
+            "{{retrieverTool_0.data.instance}}",
+            "{{retrieverTool_1.data.instance}}"
+          ],
+          "systemMessage": "You are a Supply Chain Governance Assistant. You must ALWAYS return a complete, formatted final answer to the user. Never stop after calling tools — always synthesize the tool results into a clear response.\n\nYou have THREE tools:\n1. csv_agent_calculator — for ALL arithmetic: counts, sums, averages, percentages, spend by region, concentration checks, rankings. ALWAYS call this for any number.\n2. supplier_data_lookup — for qualitative supplier info: tier, risk, disruption, compliance score, OTD rate, defect rate, region, alternate suppliers.\n3. policy_lookup — for governance rules from SupplyChain_Governance_Policy_v3.2.pdf: SLA thresholds, SWL rules, escalation protocols, concentration limits, rebate criteria.\n\nSTRICT RULES:\nSTEP 1 — Decide: does this need supplier data, policy data, or BOTH?\nSTEP 2 — If both are needed, call BOTH tools before answering.\nSTEP 3 — NEVER answer with policy alone when calculations are required.\nSTEP 4 — NEVER answer with supplier data alone when policy interpretation is required.\nSTEP 5 — For ALL calculations use csv_agent_calculator. Never infer numbers from text.\nSTEP 6 — Always cite the policy section number (e.g. Policy §5.3).\n\nOUTPUT FORMAT — always structure your final answer exactly like this:\n---\n**Data Finding:** [Computed result with exact numbers, e.g. 'EMEA total PO value: $193,987,179.91 (48.5% of total spend $399,563,494.10)']\n\n**Policy Rule (§X.X):** [Exact threshold and rule from policy, e.g. 'Section 5.3 sets a 45% regional concentration cap']\n\n**Breach Status:** [BREACHED / NOT BREACHED — with one-line explanation]\n\n**Required Action:** [Exact action mandated by policy, e.g. 'Submit Diversification Plan within 60 days']\n---\n\nIf the question only needs data (no policy), omit Policy/Breach/Action sections.\nIf the question only needs policy (no data), omit Data Finding section.\nAlways complete the full answer. Never return only tool names or intermediate steps.",
+          "maxIterations": 15,
+          "returnSourceDocuments": false,
+          "inputModeration": "",
+          "memory": "{{bufferMemory_0.data.instance}}"
+        },
+        "outputAnchors": [
+          {
+            "id": "toolAgent_0-output-toolAgent-AgentExecutor|BaseChain|Runnable",
+            "name": "toolAgent",
+            "label": "Tool Agent",
+            "description": "Supply Chain Governance Orchestrator",
+            "type": "AgentExecutor | BaseChain | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 536,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 2406.0688987941617,
+        "y": 700
+      }
+    },
+    {
+      "id": "bufferMemory_0",
+      "position": {
+        "x": 2406.0688987941617,
+        "y": 1320
+      },
+      "type": "customNode",
+      "data": {
+        "id": "bufferMemory_0",
+        "label": "Buffer Memory",
+        "version": 2,
+        "name": "bufferMemory",
+        "type": "BufferMemory",
+        "baseClasses": [
+          "BufferMemory",
+          "BaseChatMemory",
+          "BaseMemory"
+        ],
+        "category": "Memory",
+        "description": "Stores and retrieves the conversation history for the Tool Agent.",
+        "inputParams": [
+          {
+            "label": "Memory Key",
+            "name": "memoryKey",
+            "type": "string",
+            "default": "chat_history",
+            "id": "bufferMemory_0-input-memoryKey-string",
+            "display": true
+          },
+          {
+            "label": "Input Key",
+            "name": "inputKey",
+            "type": "string",
+            "default": "input",
+            "id": "bufferMemory_0-input-inputKey-string",
+            "display": true
+          },
+          {
+            "label": "Session Id",
+            "name": "sessionId",
+            "type": "string",
+            "description": "If not specified, a random id will be used. Learn more: https://docs.flowiseai.com/memory/long-term-memory",
+            "default": "",
+            "additionalParams": true,
+            "optional": true,
+            "id": "bufferMemory_0-input-sessionId-string",
+            "display": true
+          },
+          {
+            "label": "Additional Parameters",
+            "name": "additionalParams",
+            "type": "json",
+            "additionalParams": true,
+            "optional": true,
+            "id": "bufferMemory_0-input-additionalParams-json",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "memoryKey": "chat_history",
+          "inputKey": "input",
+          "sessionId": "",
+          "additionalParams": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "bufferMemory_0-output-bufferMemory-BufferMemory|BaseChatMemory|BaseMemory",
+            "name": "bufferMemory",
+            "label": "BufferMemory",
+            "description": "Stores and retrieves conversation history",
+            "type": "BufferMemory | BaseChatMemory | BaseMemory"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 435,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 2406.0688987941617,
+        "y": 1320
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "documentStore_1",
+      "sourceHandle": "documentStore_1-output-document-Document|json",
+      "target": "memoryVectorStore_0",
+      "targetHandle": "memoryVectorStore_0-input-document-Document",
+      "type": "buttonedge",
+      "id": "documentStore_1-documentStore_1-output-document-Document|json-memoryVectorStore_0-memoryVectorStore_0-input-document-Document"
+    },
+    {
+      "source": "documentStore_0",
+      "sourceHandle": "documentStore_0-output-document-Document|json",
+      "target": "memoryVectorStore_1",
+      "targetHandle": "memoryVectorStore_1-input-document-Document",
+      "type": "buttonedge",
+      "id": "documentStore_0-documentStore_0-output-document-Document|json-memoryVectorStore_1-memoryVectorStore_1-input-document-Document"
+    },
+    {
+      "source": "googleGenerativeAiEmbeddings_0",
+      "sourceHandle": "googleGenerativeAiEmbeddings_0-output-googleGenerativeAiEmbeddings-GoogleGenerativeAiEmbeddings|GoogleGenerativeAIEmbeddings|Embeddings",
+      "target": "memoryVectorStore_0",
+      "targetHandle": "memoryVectorStore_0-input-embeddings-Embeddings",
+      "type": "buttonedge",
+      "id": "googleGenerativeAiEmbeddings_0-to-memoryVectorStore_0-embeddings"
+    },
+    {
+      "source": "googleGenerativeAiEmbeddings_0",
+      "sourceHandle": "googleGenerativeAiEmbeddings_0-output-googleGenerativeAiEmbeddings-GoogleGenerativeAiEmbeddings|GoogleGenerativeAIEmbeddings|Embeddings",
+      "target": "memoryVectorStore_1",
+      "targetHandle": "memoryVectorStore_1-input-embeddings-Embeddings",
+      "type": "buttonedge",
+      "id": "googleGenerativeAiEmbeddings_0-to-memoryVectorStore_1-embeddings"
+    },
+    {
+      "source": "memoryVectorStore_0",
+      "sourceHandle": "memoryVectorStore_0-output-vectorStore-Memory|VectorStore",
+      "target": "vectorStoreRetriever_0",
+      "targetHandle": "vectorStoreRetriever_0-input-vectorStore-VectorStore",
+      "type": "buttonedge",
+      "id": "memoryVectorStore_0-to-vectorStoreRetriever_0"
+    },
+    {
+      "source": "memoryVectorStore_1",
+      "sourceHandle": "memoryVectorStore_1-output-vectorStore-Memory|VectorStore",
+      "target": "vectorStoreRetriever_1",
+      "targetHandle": "vectorStoreRetriever_1-input-vectorStore-VectorStore",
+      "type": "buttonedge",
+      "id": "memoryVectorStore_1-to-vectorStoreRetriever_1"
+    },
+    {
+      "source": "vectorStoreRetriever_0",
+      "sourceHandle": "vectorStoreRetriever_0-output-vectorStoreRetriever-VectorStoreRetriever",
+      "target": "multiRetrievalQAChain_0",
+      "targetHandle": "multiRetrievalQAChain_0-input-vectorStoreRetriever-VectorStoreRetriever",
+      "type": "buttonedge",
+      "id": "vectorStoreRetriever_0-to-multiRetrievalQAChain_0"
+    },
+    {
+      "source": "vectorStoreRetriever_1",
+      "sourceHandle": "vectorStoreRetriever_1-output-vectorStoreRetriever-VectorStoreRetriever",
+      "target": "multiRetrievalQAChain_0",
+      "targetHandle": "multiRetrievalQAChain_0-input-vectorStoreRetriever-VectorStoreRetriever",
+      "type": "buttonedge",
+      "id": "vectorStoreRetriever_1-to-multiRetrievalQAChain_0"
+    },
+    {
+      "source": "chatGoogleGenerativeAI_0",
+      "sourceHandle": "chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|ChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable",
+      "target": "multiRetrievalQAChain_0",
+      "targetHandle": "multiRetrievalQAChain_0-input-model-BaseLanguageModel",
+      "type": "buttonedge",
+      "id": "chatGoogleGenerativeAI_0-to-multiRetrievalQAChain_0"
+    },
+    {
+      "source": "chatGoogleGenerativeAI_0",
+      "sourceHandle": "chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|ChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable",
+      "target": "csvAgent_0",
+      "targetHandle": "csvAgent_0-input-model-BaseLanguageModel",
+      "type": "buttonedge",
+      "id": "chatGoogleGenerativeAI_0-to-csvAgent_0"
+    },
+    {
+      "source": "csvAgent_0",
+      "sourceHandle": "csvAgent_0-output-csvAgent-AgentExecutor|BaseChain|Runnable",
+      "target": "chainTool_0",
+      "targetHandle": "chainTool_0-input-chain-BaseChain",
+      "type": "buttonedge",
+      "id": "csvAgent_0-to-chainTool_0"
+    },
+    {
+      "source": "vectorStoreRetriever_0",
+      "sourceHandle": "vectorStoreRetriever_0-output-vectorStoreRetriever-VectorStoreRetriever",
+      "target": "retrieverTool_0",
+      "targetHandle": "retrieverTool_0-input-retriever-BaseRetriever",
+      "type": "buttonedge",
+      "id": "vectorStoreRetriever_0-to-retrieverTool_0"
+    },
+    {
+      "source": "vectorStoreRetriever_1",
+      "sourceHandle": "vectorStoreRetriever_1-output-vectorStoreRetriever-VectorStoreRetriever",
+      "target": "retrieverTool_1",
+      "targetHandle": "retrieverTool_1-input-retriever-BaseRetriever",
+      "type": "buttonedge",
+      "id": "vectorStoreRetriever_1-to-retrieverTool_1"
+    },
+    {
+      "source": "chainTool_0",
+      "sourceHandle": "chainTool_0-output-chainTool-DynamicTool|Tool|StructuredTool|Runnable",
+      "target": "toolAgent_0",
+      "targetHandle": "toolAgent_0-input-tools-Tool",
+      "type": "buttonedge",
+      "id": "chainTool_0-to-toolAgent_0"
+    },
+    {
+      "source": "retrieverTool_0",
+      "sourceHandle": "retrieverTool_0-output-retrieverTool-DynamicTool|Tool|StructuredTool|Runnable",
+      "target": "toolAgent_0",
+      "targetHandle": "toolAgent_0-input-tools-Tool",
+      "type": "buttonedge",
+      "id": "retrieverTool_0-to-toolAgent_0"
+    },
+    {
+      "source": "retrieverTool_1",
+      "sourceHandle": "retrieverTool_1-output-retrieverTool-DynamicTool|Tool|StructuredTool|Runnable",
+      "target": "toolAgent_0",
+      "targetHandle": "toolAgent_0-input-tools-Tool",
+      "type": "buttonedge",
+      "id": "retrieverTool_1-to-toolAgent_0"
+    },
+    {
+      "source": "chatGoogleGenerativeAI_0",
+      "sourceHandle": "chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|ChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable",
+      "target": "toolAgent_0",
+      "targetHandle": "toolAgent_0-input-model-BaseLanguageModel",
+      "type": "buttonedge",
+      "id": "chatGoogleGenerativeAI_0-to-toolAgent_0"
+    },
+    {
+      "source": "documentStore_1",
+      "sourceHandle": "documentStore_1-output-document-Document|json",
+      "target": "csvAgent_0",
+      "targetHandle": "csvAgent_0-input-csvFile-Document",
+      "type": "buttonedge",
+      "id": "documentStore_1-to-csvAgent_0"
+    },
+    {
+      "source": "bufferMemory_0",
+      "sourceHandle": "bufferMemory_0-output-bufferMemory-BufferMemory|BaseChatMemory|BaseMemory",
+      "target": "toolAgent_0",
+      "targetHandle": "toolAgent_0-input-memory-BaseChatMemory",
+      "type": "buttonedge",
+      "id": "bufferMemory_0-to-toolAgent_0"
+    }
+  ]
+}
