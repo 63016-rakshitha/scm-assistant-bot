@@ -1,0 +1,7 @@
+.env
+.env.*
+*.key
+apikey.txt
+api_key.txt
+credentials.json
+secrets.json
